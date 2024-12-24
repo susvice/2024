@@ -1,0 +1,178 @@
+/* Universal Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: montserrat, sans-serif;
+  }
+  
+  /* Background Styling */
+  .calendar-bg {
+    background: #042f5f;
+    background-image: linear-gradient(30deg, white 15%, #042f5f 85%);
+    background-size: 20px 100%;
+    background-position: center;
+    padding-bottom: 50px;
+  }
+  
+  /* Title Styling */
+  .title {
+    text-align: center;
+    color: white;
+    letter-spacing: 0.3vw;
+    font-size: 10vw;
+    line-height: 1;
+    padding-top: 30px;
+    margin: 0 auto 30px;
+  }
+  
+  @media screen and (min-width: 440px) {
+    .title {
+      letter-spacing: 3px;
+      font-size: 3em;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .title {
+      letter-spacing: 4px;
+      font-size: 4em;
+    }
+  }
+  
+  /* Grid Styling */
+  .grid {
+    padding: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3vw;
+    perspective: 1500px;
+  }
+  
+  @media screen and (min-width: 440px) {
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 16px;
+    }
+  }
+  
+  @media screen and (min-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 20px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
+  
+  /* Day Container */
+  .day {
+    min-height: 123px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 0 20px rgba(80, 80, 120, 0.5) inset, 0 0 5px 2px rgba(80, 80, 120, 0.3) inset;
+    overflow: hidden; /* Prevents content spilling out */
+  }
+  
+  /* Door Styling */
+  .door {
+    background-color: #dd0707;
+    background-image: linear-gradient(45deg, white, transparent 5%, transparent 45%, white 50%, transparent 55%, transparent 95%, white 100%);
+    background-size: 20px 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    cursor: pointer;
+    z-index: 10; /* Ensure door stays above bg-text */
+  }
+  
+  /* Back of Door */
+  .door:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(170, 10, 10);
+    transform: translateZ(-1px);
+  }
+  
+  /* Door Open Animation */
+  .open {
+    z-index: 100;
+    animation: open-door 1s forwards;
+  }
+  
+  @keyframes open-door {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-90deg);
+      z-index: 200;
+    }
+  }
+  
+  /* Number Inside the Door */
+  .number {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    text-align: center;
+    color: #fff;
+    font-size: 5vw;
+    font-weight: 600;
+    min-width: 30px;
+    background: #dd0707;
+    padding: 5px 7px;
+    border-radius: 50%;
+  }
+  
+  @media screen and (min-width: 440px) {
+    .number {
+      font-size: 1.5em;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .number {
+      font-size: 1.8em;
+    }
+  }
+  
+  /* Background Text (Inside the Box) */
+  .bg-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(216, 226, 210, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #333;
+    font-size: clamp(0.8em, 2.5vw, 1.5em); /* Responsive font size */
+    font-weight: bold;
+    padding: 10px; /* Prevent text from touching edges */
+    overflow-wrap: break-word; /* Allow text to wrap */
+    word-break: break-word; /* Break long words */
+    z-index: 5; /* Keep bg-text behind the door */
+  }
+  
+  /* Responsive Adjustments for Small Screens */
+  @media screen and (max-width: 600px) {
+    .bg-text {
+      font-size: clamp(0.7em, 3vw, 1.2em);
+      padding: 8px;
+    }
+  }
+  
