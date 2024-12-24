@@ -7,7 +7,7 @@ const days = [
     'December 23': 'The Boy and The Heron, our first movie and first...',
     'December 24': 'Saturday mornings with you, me, and Dr. Hakim',
     'December 25': 'In the car while it snowed outside',
-    'December 26': 'At the beach',
+    'December 26': '4 books on time travel, and a beach episode',
     'December 27': 'Countless meetings-of-the-minds and food exchanges at IKEA',
     'December 28': 'The Japan and MCAT arc! What time zone difference!',
     'December 29': 'The day I made what might be the best decision of my life',
