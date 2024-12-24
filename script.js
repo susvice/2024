@@ -53,7 +53,7 @@ for (let i = 0; i < daysArray.length; i++) {
     const currentDay = daysArray[i];
     const currentDayString = days[i]; // For message and display purposes
   
-    // Skip adding an event listener for days not reached yet
+    // Skip adding an event listener for days that are not reached yet
     if (currentDay > today) continue;
   
     // Allow the door to open if the date is equal to or before today
