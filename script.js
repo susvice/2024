@@ -20,9 +20,9 @@ const days = [
   const daysArray = days.map(day => {
     const [month, dayNum] = day.split(' ');
     const monthIndex = new Date(`${month} 1`).getMonth(); // Get month index
-    const year = monthIndex === 0 && new Date().getMonth() === 11 // If January and today is December
-      ? new Date().getFullYear() + 1
-      : new Date().getFullYear();
+    const year = monthIndex === 0 // If January and today is December
+      ? new Date().getFullYear()
+      : new Date().getFullYear() - 1;
     return new Date(year, monthIndex, parseInt(dayNum));
   });
   
